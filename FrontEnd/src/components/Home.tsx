@@ -1,9 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { IProduct } from '../types/Product';
+import { ProductContext } from '../context/productContext';
 
 function Home() {
-    const [ products, setProducts ] = useState([]);
+    const { products, setProducts } = useContext(ProductContext);
     const [ isError, setIsError ] = useState(false);
 
     useEffect(() => {
